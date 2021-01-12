@@ -51,6 +51,8 @@ public class WeatherManager {
 
     private Weather currentWeather;
 
+    private String tempType="C";
+
     public void setMain(Main main) {
         this.main = main;
 
@@ -266,6 +268,29 @@ public class WeatherManager {
             http_req();
 
             set_view();
+        }
+    }
+
+    public void degreeFhandler()
+    {
+        if(tempType.equals("C"))
+        {
+            Double dd = currentWeather.getTemp() - 273.15;
+            dd = dd * 1.8 + 32;
+            Integer ii = dd.intValue();
+            String bomb = new StringBuilder().appendCodePoint(0x00B0).toString();
+            label_temp.setText(ii.toString() + bomb);
+        }
+    }
+
+    public void degreeChandler()
+    {
+        if(tempType.equals("C"))
+        {
+            Double dd = currentWeather.getTemp() - 273.15;
+            Integer ii = dd.intValue();
+            String bomb = new StringBuilder().appendCodePoint(0x00B0).toString();
+            label_temp.setText(ii.toString() + bomb);
         }
     }
 
