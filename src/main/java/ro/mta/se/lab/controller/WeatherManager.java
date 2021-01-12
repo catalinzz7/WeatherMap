@@ -200,7 +200,49 @@ public class WeatherManager {
         Date date = calendar.getTime();
         label_datetime.setText(new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date.getTime()));
 
-        
+
     }
+
+    public void changeCountryList()
+    {
+        String myCountry = country_list.getValue().toString();
+
+        ObservableList<String> List_city = FXCollections.observableArrayList();
+
+        for(Location loc:Location_list)
+        {
+            if(loc.getCountry().equals(myCountry))
+            {
+                List_city.add(loc.getCity());
+            }
+        }
+
+        city_list.setItems(List_city);
+    }
+
+    public void changeCityList() throws Exception {
+        if(!city_list.getSelectionModel().isEmpty()) {
+            String myCity = city_list.getValue().toString();
+            String myCountry = country_list.getValue().toString();
+            Double myLat = 0.0;
+            Double myLon = 0.0;
+
+
+            for (Location loc : Location_list) {
+                if (loc.getCountry().equals(myCountry) && loc.getCity().equals(myCity)) {
+                    myLon = loc.getLon();
+                    myLat = loc.getLat();
+                    break;
+                }
+            }
+
+            POSTS_API_URL = URL + "lat=" + myLat.toString() + "&lon=" + myLon.toString() + API_KEY;
+
+            http_req();
+
+            set_view();
+        }
+    }
+
 }
 
