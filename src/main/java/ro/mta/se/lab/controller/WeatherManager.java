@@ -200,6 +200,31 @@ public class WeatherManager {
         Date date = calendar.getTime();
         label_datetime.setText(new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date.getTime()));
 
+        setImg(currentWeather.getWeatherType());
+    }
+
+    public void setImg(String WType)
+    {
+        String path="";
+        switch(WType) {
+            case "Snow":
+                path = "/icons/snow_light.png";
+                break;
+            case "Clear":
+                path = "/icons/sunny.png";
+                break;
+            case "Clouds":
+                path = "/icons/cloudy.png";
+                break;
+            case "Rain":
+                path = "/icons/rain_light.png";
+                break;
+            default:
+                path = "/icons/partly_cloudy.png";
+        }
+
+        Image img1 = new Image(path);
+        image_wather.setImage(img1);
 
     }
 
