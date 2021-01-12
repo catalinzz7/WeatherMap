@@ -3,23 +3,36 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.mta.se.lab.controller.WeatherManager">
    <children>
-      <Pane layoutX="-7.0" prefHeight="400.0" prefWidth="606.0">
-         <children>
-            <ComboBox layoutX="41.0" layoutY="49.0" prefWidth="150.0" />
-            <ComboBox layoutX="272.0" layoutY="49.0" prefWidth="150.0" />
-            <Button layoutX="335.0" layoutY="330.0" mnemonicParsing="false" text="Button" />
-            <Button layoutX="396.0" layoutY="330.0" mnemonicParsing="false" text="Button" />
-            <Button layoutX="462.0" layoutY="330.0" mnemonicParsing="false" text="Button" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="41.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="70.0" layoutY="23.0" text="Label" />
-            <Label layoutX="289.0" layoutY="23.0" text="Label" />
-            <Label layoutX="70.0" layoutY="91.0" text="Label" />
-            <Label layoutX="70.0" layoutY="117.0" text="Label" />
-            <Label layoutX="70.0" layoutY="144.0" text="Label" />
-         </children></Pane>
+      <Label fx:id="label_city" alignment="CENTER" layoutX="42.0" layoutY="78.0" prefHeight="30.0" prefWidth="199.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="359.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="201.0" layoutY="208.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <ComboBox fx:id="country_list" layoutX="56.0" layoutY="37.0" onAction="#changeCountryList" prefWidth="150.0" />
+      <ImageView fx:id="image_wather" fitHeight="132.0" fitWidth="116.0" layoutX="48.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="95.0" layoutY="14.0" prefHeight="18.0" prefWidth="65.0" text="Country:" />
+      <Label layoutX="300.0" layoutY="14.0" prefHeight="18.0" prefWidth="87.0" text="City:" />
+      <Label fx:id="label_datetime" layoutX="67.0" layoutY="108.0" prefHeight="26.0" prefWidth="150.0" />
+      <Label fx:id="label_wather" layoutX="68.0" layoutY="134.0" prefHeight="18.0" prefWidth="171.0" />
+      <Label fx:id="label_info_1" layoutX="375.0" layoutY="229.0" prefHeight="18.0" prefWidth="143.0" />
+      <Label fx:id="label_info_2" layoutX="375.0" layoutY="257.0" prefHeight="18.0" prefWidth="143.0" />
+      <Label fx:id="label_info_3" layoutX="375.0" layoutY="285.0" prefHeight="18.0" prefWidth="143.0" />
+      <Button fx:id="btn_temp" layoutX="277.0" layoutY="337.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="97.0" text="Temperature" />
+      <Button fx:id="btn_precp" layoutX="375.0" layoutY="337.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="87.0" text="Precipitation" />
+      <Button fx:id="btn_wind" layoutX="462.0" layoutY="337.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="50.0" text="Wind" />
+      <Label fx:id="label_temp" layoutX="166.0" layoutY="208.0" prefHeight="106.0" prefWidth="171.0">
+         <font>
+            <Font size="65.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_C" layoutX="234.0" layoutY="195.0" mnemonicParsing="false" onAction="#degreeChandler" prefHeight="26.0" prefWidth="31.0" text="C" />
+      <Button fx:id="btn_F" layoutX="268.0" layoutY="195.0" mnemonicParsing="false" onAction="#degreeFhandler" prefHeight="26.0" prefWidth="31.0" text="F" />
+      <ComboBox fx:id="city_list" layoutX="260.0" layoutY="37.0" onAction="#changeCityList" prefWidth="150.0" />
+
    </children>
 </AnchorPane>
