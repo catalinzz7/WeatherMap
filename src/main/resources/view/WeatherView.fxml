@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.mta.se.lab.controller.WeatherManager">
    <children>
-      <Pane layoutX="-7.0" prefHeight="400.0" prefWidth="606.0" />
+      <Pane layoutX="-7.0" prefHeight="400.0" prefWidth="606.0">
+         <children>
+            <ComboBox layoutX="41.0" layoutY="49.0" prefWidth="150.0" />
+            <ComboBox layoutX="272.0" layoutY="49.0" prefWidth="150.0" />
+            <Button layoutX="335.0" layoutY="330.0" mnemonicParsing="false" text="Button" />
+            <Button layoutX="396.0" layoutY="330.0" mnemonicParsing="false" text="Button" />
+            <Button layoutX="462.0" layoutY="330.0" mnemonicParsing="false" text="Button" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="41.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="70.0" layoutY="23.0" text="Label" />
+            <Label layoutX="289.0" layoutY="23.0" text="Label" />
+            <Label layoutX="70.0" layoutY="91.0" text="Label" />
+            <Label layoutX="70.0" layoutY="117.0" text="Label" />
+            <Label layoutX="70.0" layoutY="144.0" text="Label" />
+         </children></Pane>
    </children>
 </AnchorPane>
