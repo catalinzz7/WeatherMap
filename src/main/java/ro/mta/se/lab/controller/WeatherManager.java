@@ -179,5 +179,28 @@ public class WeatherManager {
         currentWeather.setCountry(country_list.getValue().toString());
         currentWeather.setCity(city_list.getValue().toString());
     }
+
+    public void set_view()
+    {
+        label_city.setText(currentWeather.getCity());
+        label_wather.setText(currentWeather.getWeatherType() + " - " + currentWeather.getWeatherDesc());
+
+        label_info_1.setText("Pressure: " + currentWeather.getPress() + "mb");
+        label_info_2.setText("Humidity: " + currentWeather.getHumid() + "%");
+        label_info_3.setText("Wind: " + currentWeather.getWindspd() + " km/h");
+
+        Double tempC = currentWeather.getTemp() - 273.15;
+        Integer aux = tempC.intValue();
+        String bomb = new StringBuilder().appendCodePoint(0x00B0).toString();
+        label_temp.setText(aux.toString() + bomb);
+
+
+
+        Calendar calendar = Calendar.getInstance();
+        Date date = calendar.getTime();
+        label_datetime.setText(new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date.getTime()));
+
+        
+    }
 }
 
